@@ -157,10 +157,12 @@ export const CONFIG_ENV_MAP: Record<string, { envVar: string; fileEnvVar?: strin
   logFormat: { envVar: 'LOG_FORMAT', type: 'enum', defaultValue: 'text', enumValues: ['text', 'json'] },
   logLevel: { envVar: 'LOG_LEVEL', type: 'enum', defaultValue: 'info', enumValues: ['error', 'warn', 'info', 'debug'] },
   sessionSecret: { envVar: 'SESSION_SECRET', fileEnvVar: 'SESSION_SECRET_FILE', type: 'string', defaultValue: '' },
+  camoUrl: { envVar: 'CAMO_URL', type: 'string', defaultValue: '' },
+  camoKey: { envVar: 'CAMO_KEY', fileEnvVar: 'CAMO_SECRET_FILE', type: 'string', defaultValue: '' }
 };
 
 /** Keys that should never be exposed to the client config endpoint */
-export const SENSITIVE_CONFIG_KEYS = new Set(['oauthClientSecret', 'sessionSecret']);
+export const SENSITIVE_CONFIG_KEYS = new Set(['oauthClientSecret', 'sessionSecret', 'camoKey']);
 
 /** Admin session cookie name */
 export const ADMIN_SESSION_COOKIE = 'admin_session';
