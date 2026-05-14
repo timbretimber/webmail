@@ -9,6 +9,7 @@ const COOKIE_SECURE = process.env.COOKIE_SECURE !== undefined
   ? process.env.COOKIE_SECURE === 'true'
   : (COOKIE_SAME_SITE === 'none' || process.env.NODE_ENV === 'production');
 
+console.log(process.env.COOKIE_SAME_SITE,configManager.get<string>('cookieSameSite', ''))
 export function getCookieOptions() {
   return {
     httpOnly: true,
